@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16sp"
+    android:id="@+id/fragment_ip"
+    android:background="@color/clr2">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INPUT 1: "
+        android:textSize="20sp"
+        android:textColor="@color/clr1"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/input1"
+        android:textColor="@color/clr1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INPUT 2: "
+        android:textSize="20sp"
+        android:textColor="@color/clr1"
+        android:layout_marginTop="20sp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/input2"
+        android:textColor="@color/clr1"/>
+
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:text="@string/addition"
+        android:textColor="@color/clr2"
+        app:backgroundTint="@color/clr1" />
+
+    <Button
+        android:id="@+id/sub_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:text="@string/subtraction"
+        android:textColor="@color/clr2"
+        app:backgroundTint="@color/clr1" />
+
+    <Button
+        android:id="@+id/mul_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:text="@string/multiplication"
+        android:textColor="@color/clr2"
+        app:backgroundTint="@color/clr1" />
+
+    <Button
+        android:id="@+id/div_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:text="@string/division"
+        android:textColor="@color/clr2"
+        app:backgroundTint="@color/clr1" />
+
+    <!--<Button
+        android:id="@+id/result_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:text="RESULT"/>-->
+
+
+
+
+
+</LinearLayout>

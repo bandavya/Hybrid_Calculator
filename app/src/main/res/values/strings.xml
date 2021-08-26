@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hybrid Calculator</string>
+    <string name="addition">ADDITION</string>
+    <string name="subtraction">SUBTRACTION</string>
+    <string name="multiplication">MULTIPLICATION</string>
+    <string name="division">DIVISION</string>
+    <string name="_0">0</string>
+    <string name="back">BACK</string>
+</resources>
