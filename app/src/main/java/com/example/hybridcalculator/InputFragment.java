@@ -12,11 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 public class InputFragment extends Fragment {
-    private ViewModel viewModel;
+    private SharedViewModel viewModel;
 
     EditText ip_a, ip_b;
     Integer num1, num2;
@@ -34,14 +35,14 @@ public class InputFragment extends Fragment {
         multiply = v.findViewById(R.id.mul_btn);
         div = v.findViewById(R.id.div_btn);
 
-        //viewModel = new ViewModelProvider(getActivity()).get(ViewModel.class);
+        //viewModel = new ViewModelProvider(getActivity()).get(SharedViewModel.class);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (check_Num()) {
                     answer = num1 + num2;
-                    Toast.makeText(getContext(), answer , Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), answer , Toast.LENGTH_SHORT).show();
                     viewModel.setData(answer);
                 }
             }
@@ -51,7 +52,7 @@ public class InputFragment extends Fragment {
             public void onClick(View v) {
                 if (check_Num()) {
                     answer = (num1 - num2);
-                    Toast.makeText(getContext(), answer , Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), answer , Toast.LENGTH_SHORT).show();
                     viewModel.setData(answer);
 
                 }
@@ -62,7 +63,7 @@ public class InputFragment extends Fragment {
             public void onClick(View v) {
                 if (check_Num()) {
                     answer = (num1 * num2);
-                    Toast.makeText(getContext(), answer , Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), answer , Toast.LENGTH_SHORT).show();
                     viewModel.setData(answer);
 
                 }
@@ -73,7 +74,7 @@ public class InputFragment extends Fragment {
             public void onClick(View v) {
                 if (check_Num()) {
                     answer = (num1 / num2);
-                    Toast.makeText(getContext(), answer , Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), answer , Toast.LENGTH_SHORT).show();
                     viewModel.setData(answer);
 
                 }
@@ -83,7 +84,16 @@ public class InputFragment extends Fragment {
 
         return v;
     }
-
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
+        viewModel.getdata().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(@Nullable Integer res) {
+            }
+        });
+    }
 
 
 
